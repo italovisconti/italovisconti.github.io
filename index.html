@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Italo Visconti</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -15,10 +19,211 @@
             height: 100vh;
             font-family: sans-serif;
             color: black;
+            overflow-x: hidden;
+        }
+
+        /* Metrobus Road & Track */
+        .metrobus-road {
+            position: fixed;
+            bottom: 16px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: #e5e7eb;
+            z-index: 10;
+        }
+
+        .metrobus-track {
+            position: fixed;
+            bottom: 17px;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 20;
+        }
+
+        .metrobus-link {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            cursor: pointer;
+            pointer-events: auto;
+            animation: driveMetrobus 16s linear infinite;
+            outline: none;
+        }
+
+        .metrobus-link:hover,
+        .metrobus-link:focus-visible {
+            animation-play-state: paused;
+        }
+
+        .metrobus-vehicle {
+            display: block;
+            width: 105px;
+            height: auto;
+            animation: busBounce 0.5s ease-in-out infinite alternate;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
+            transition: filter 0.2s ease;
+        }
+
+        .metrobus-link:hover .metrobus-vehicle,
+        .metrobus-link:focus-visible .metrobus-vehicle {
+            animation-play-state: paused;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.16));
+        }
+
+        /* Tooltip */
+        .metrobus-tooltip {
+            position: absolute;
+            bottom: calc(100% + 8px);
+            left: 50%;
+            transform: translateX(-50%) translateY(4px);
+            background-color: #18181b;
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 6px 12px;
+            border-radius: 6px;
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 0;
+            visibility: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+            transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+            user-select: none;
+        }
+
+        .metrobus-tooltip::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 5px;
+            border-style: solid;
+            border-color: #18181b transparent transparent transparent;
+        }
+
+        .metrobus-link:hover .metrobus-tooltip,
+        .metrobus-link:focus-visible .metrobus-tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* Wheels rotation */
+        .wheel-rear {
+            transform-origin: 130px 350px;
+            animation: rotateWheel 0.9s linear infinite;
+        }
+
+        .wheel-front {
+            transform-origin: 380px 350px;
+            animation: rotateWheel 0.9s linear infinite;
+        }
+
+        .metrobus-link:hover .wheel-rear,
+        .metrobus-link:hover .wheel-front,
+        .metrobus-link:focus-visible .wheel-rear,
+        .metrobus-link:focus-visible .wheel-front {
+            animation-play-state: paused;
+        }
+
+        @keyframes driveMetrobus {
+            0% {
+                transform: translateX(-140px);
+            }
+            100% {
+                transform: translateX(calc(100vw + 40px));
+            }
+        }
+
+        @keyframes rotateWheel {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes busBounce {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-1.5px);
+            }
         }
     </style>
 </head>
 <body>
     <h1>italo visconti</h1>
+
+    <div class="metrobus-road"></div>
+    <div class="metrobus-track">
+        <a href="https://www.yapasoelbus.app/" target="_blank" rel="noopener noreferrer" class="metrobus-link" aria-label="YaPasóElBus">
+            <span class="metrobus-tooltip">haz click para ir a yapasoelbus</span>
+            <svg class="metrobus-vehicle" viewBox="50 115 410 276" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <clipPath id="busStripeClip">
+                        <rect x="56" y="130" width="400" height="14" rx="7" ry="7" />
+                    </clipPath>
+                </defs>
+
+                <!-- Bus Body -->
+                <rect x="56" y="120" width="400" height="200" rx="30" ry="30" fill="#2D4A3E" />
+                <rect x="56" y="200" width="400" height="120" rx="10" ry="10" fill="#2D4A3E" />
+
+                <!-- Metro Lines Stripe -->
+                <g clip-path="url(#busStripeClip)">
+                    <rect x="56" y="130" width="100" height="14" fill="#C41230" />
+                    <rect x="156" y="130" width="100" height="14" fill="#F1C40F" />
+                    <rect x="256" y="130" width="100" height="14" fill="#27AE60" />
+                    <rect x="356" y="130" width="100" height="14" fill="#2E86DE" />
+                </g>
+
+                <!-- Windows -->
+                <rect x="80" y="148" width="60" height="50" rx="5" ry="5" fill="#FFFFFF" opacity="0.78" />
+                <rect x="150" y="148" width="60" height="50" rx="5" ry="5" fill="#FFFFFF" opacity="0.78" />
+                <rect x="220" y="148" width="60" height="50" rx="5" ry="5" fill="#FFFFFF" opacity="0.78" />
+                <rect x="290" y="148" width="60" height="50" rx="5" ry="5" fill="#FFFFFF" opacity="0.78" />
+                <rect x="370" y="148" width="60" height="50" rx="5" ry="5" fill="#FFFFFF" opacity="0.78" />
+
+                <!-- Front detail / windshield & lights -->
+                <circle cx="430" cy="280" r="15" fill="#FFFFFF" opacity="0.9" />
+                <circle cx="430" cy="240" r="15" fill="#FFFFFF" opacity="0.9" />
+                <rect x="425" y="200" width="15" height="120" rx="5" ry="5" fill="#222222" />
+
+                <!-- Rear Wheel -->
+                <g class="wheel-rear">
+                    <circle cx="130" cy="350" r="40" fill="#2A2A2A" />
+                    <circle cx="130" cy="350" r="25" fill="#666666" />
+                    <circle cx="130" cy="350" r="15" fill="#2A2A2A" />
+                    <circle cx="130" cy="333" r="2.5" fill="#3a3a3a" />
+                    <circle cx="130" cy="367" r="2.5" fill="#3a3a3a" />
+                    <circle cx="113" cy="350" r="2.5" fill="#3a3a3a" />
+                    <circle cx="147" cy="350" r="2.5" fill="#3a3a3a" />
+                </g>
+
+                <!-- Front Wheel -->
+                <g class="wheel-front">
+                    <circle cx="380" cy="350" r="40" fill="#2A2A2A" />
+                    <circle cx="380" cy="350" r="25" fill="#666666" />
+                    <circle cx="380" cy="350" r="15" fill="#2A2A2A" />
+                    <circle cx="380" cy="333" r="2.5" fill="#3a3a3a" />
+                    <circle cx="380" cy="367" r="2.5" fill="#3a3a3a" />
+                    <circle cx="363" cy="350" r="2.5" fill="#3a3a3a" />
+                    <circle cx="397" cy="350" r="2.5" fill="#3a3a3a" />
+                </g>
+            </svg>
+        </a>
+    </div>
 </body>
 </html>
