@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Italo Visconti</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="favicon.ico">
     <style>
         * {
             box-sizing: border-box;
@@ -63,7 +65,7 @@
 
         .metrobus-vehicle {
             display: block;
-            width: 108px;
+            width: 150px;
             height: auto;
             animation: busBounce 0.5s ease-in-out infinite alternate;
             filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
@@ -79,7 +81,7 @@
         /* Tooltip */
         .metrobus-tooltip {
             position: absolute;
-            bottom: calc(100% + 8px);
+            bottom: calc(100% + 10px);
             left: 50%;
             transform: translateX(-50%) translateY(4px);
             background-color: #18181b;
@@ -135,10 +137,10 @@
 
         @keyframes driveMetrobus {
             0% {
-                transform: translateX(-140px);
+                transform: translateX(-180px);
             }
             100% {
-                transform: translateX(calc(100vw + 40px));
+                transform: translateX(calc(100vw + 60px));
             }
         }
 

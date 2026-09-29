@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000"><metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"><rdf:Description><dc:creator>RealFaviconGenerator</dc:creator><dc:source>https://realfavicongenerator.net</dc:source></rdf:Description></rdf:RDF></metadata><g clip-path="url(#SvgjsClipPath5022)"><rect width="1000" height="1000" fill="#ffffff"></rect><g transform="matrix(7.8125,0,0,7.8125,0,187.5)"><svg xmlns="http://www.w3.org/2000/svg" width="128" height="80" viewBox="0 0 128 80"><defs>
+    <clipPath id="simpleBusStripeClip">
+      <rect x="10" y="18" width="108" height="7" rx="3.5" ry="3.5"></rect>
+    </clipPath>
+  <clipPath id="SvgjsClipPath5022"><rect width="1000" height="1000" x="0" y="0" rx="300" ry="300"></rect></clipPath></defs><rect x="10" y="14" width="108" height="38" rx="9" ry="9" fill="#2D4A3E"></rect><g clip-path="url(#simpleBusStripeClip)">
+    <rect x="10" y="18" width="27" height="7" fill="#C41230"></rect>
+    <rect x="37" y="18" width="27" height="7" fill="#F1C40F"></rect>
+    <rect x="64" y="18" width="27" height="7" fill="#27AE60"></rect>
+    <rect x="91" y="18" width="27" height="7" fill="#2E86DE"></rect>
+  </g><rect x="18" y="28" width="17" height="10" rx="2" ry="2" fill="#FFFFFF" opacity="0.82"></rect><rect x="39" y="28" width="17" height="10" rx="2" ry="2" fill="#FFFFFF" opacity="0.82"></rect><rect x="60" y="28" width="17" height="10" rx="2" ry="2" fill="#FFFFFF" opacity="0.82"></rect><rect x="81" y="28" width="17" height="10" rx="2" ry="2" fill="#FFFFFF" opacity="0.82"></rect><rect x="101" y="28" width="8" height="21" rx="2" ry="2" fill="#FFFFFF" opacity="0.88"></rect><circle cx="34" cy="57" r="8" fill="#2A2A2A"></circle><circle cx="34" cy="57" r="3.3" fill="#6B7280"></circle><circle cx="90" cy="57" r="8" fill="#2A2A2A"></circle><circle cx="90" cy="57" r="3.3" fill="#6B7280"></circle></svg></g></g></svg>
