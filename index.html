@@ -35,10 +35,10 @@
 
         .metrobus-track {
             position: fixed;
-            bottom: 17px;
+            bottom: 16px;
             left: 0;
             width: 100%;
-            height: 80px;
+            height: 70px;
             pointer-events: none;
             overflow: hidden;
             z-index: 20;
@@ -65,7 +65,7 @@
 
         .metrobus-vehicle {
             display: block;
-            width: 105px;
+            width: 108px;
             height: auto;
             animation: busBounce 0.5s ease-in-out infinite alternate;
             filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
@@ -119,13 +119,13 @@
 
         /* Wheels rotation */
         .wheel-rear {
-            transform-origin: 130px 350px;
-            animation: rotateWheel 0.9s linear infinite;
+            transform-origin: 34px 57px;
+            animation: rotateWheel 0.8s linear infinite;
         }
 
         .wheel-front {
-            transform-origin: 380px 350px;
-            animation: rotateWheel 0.9s linear infinite;
+            transform-origin: 90px 57px;
+            animation: rotateWheel 0.8s linear infinite;
         }
 
         .metrobus-link:hover .wheel-rear,
@@ -170,57 +170,49 @@
     <div class="metrobus-track">
         <a href="https://www.yapasoelbus.app/" target="_blank" rel="noopener noreferrer" class="metrobus-link" aria-label="YaPasóElBus">
             <span class="metrobus-tooltip">haz click para ir a yapasoelbus</span>
-            <svg class="metrobus-vehicle" viewBox="50 115 410 276" xmlns="http://www.w3.org/2000/svg">
+            <svg class="metrobus-vehicle" viewBox="8 12 112 54" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                    <clipPath id="busStripeClip">
-                        <rect x="56" y="130" width="400" height="14" rx="7" ry="7" />
+                    <clipPath id="simpleBusStripeClip">
+                        <rect x="10" y="18" width="108" height="7" rx="3.5" ry="3.5" />
                     </clipPath>
                 </defs>
 
                 <!-- Bus Body -->
-                <rect x="56" y="120" width="400" height="200" rx="30" ry="30" fill="#2D4A3E" />
-                <rect x="56" y="200" width="400" height="120" rx="10" ry="10" fill="#2D4A3E" />
+                <rect x="10" y="14" width="108" height="38" rx="9" ry="9" fill="#2D4A3E" />
 
                 <!-- Metro Lines Stripe -->
-                <g clip-path="url(#busStripeClip)">
-                    <rect x="56" y="130" width="100" height="14" fill="#C41230" />
-                    <rect x="156" y="130" width="100" height="14" fill="#F1C40F" />
-                    <rect x="256" y="130" width="100" height="14" fill="#27AE60" />
-                    <rect x="356" y="130" width="100" height="14" fill="#2E86DE" />
+                <g clip-path="url(#simpleBusStripeClip)">
+                    <rect x="10" y="18" width="27" height="7" fill="#C41230" />
+                    <rect x="37" y="18" width="27" height="7" fill="#F1C40F" />
+                    <rect x="64" y="18" width="27" height="7" fill="#27AE60" />
+                    <rect x="91" y="18" width="27" height="7" fill="#2E86DE" />
                 </g>
 
                 <!-- Windows -->
-                <rect x="80" y="148" width="60" height="50" rx="5" ry="5" fill="#FFFFFF" opacity="0.78" />
-                <rect x="150" y="148" width="60" height="50" rx="5" ry="5" fill="#FFFFFF" opacity="0.78" />
-                <rect x="220" y="148" width="60" height="50" rx="5" ry="5" fill="#FFFFFF" opacity="0.78" />
-                <rect x="290" y="148" width="60" height="50" rx="5" ry="5" fill="#FFFFFF" opacity="0.78" />
-                <rect x="370" y="148" width="60" height="50" rx="5" ry="5" fill="#FFFFFF" opacity="0.78" />
-
-                <!-- Front detail / windshield & lights -->
-                <circle cx="430" cy="280" r="15" fill="#FFFFFF" opacity="0.9" />
-                <circle cx="430" cy="240" r="15" fill="#FFFFFF" opacity="0.9" />
-                <rect x="425" y="200" width="15" height="120" rx="5" ry="5" fill="#222222" />
+                <rect x="18" y="28" width="17" height="10" rx="2" ry="2" fill="#FFFFFF" opacity="0.82" />
+                <rect x="39" y="28" width="17" height="10" rx="2" ry="2" fill="#FFFFFF" opacity="0.82" />
+                <rect x="60" y="28" width="17" height="10" rx="2" ry="2" fill="#FFFFFF" opacity="0.82" />
+                <rect x="81" y="28" width="17" height="10" rx="2" ry="2" fill="#FFFFFF" opacity="0.82" />
+                <rect x="101" y="28" width="8" height="21" rx="2" ry="2" fill="#FFFFFF" opacity="0.88" />
 
                 <!-- Rear Wheel -->
                 <g class="wheel-rear">
-                    <circle cx="130" cy="350" r="40" fill="#2A2A2A" />
-                    <circle cx="130" cy="350" r="25" fill="#666666" />
-                    <circle cx="130" cy="350" r="15" fill="#2A2A2A" />
-                    <circle cx="130" cy="333" r="2.5" fill="#3a3a3a" />
-                    <circle cx="130" cy="367" r="2.5" fill="#3a3a3a" />
-                    <circle cx="113" cy="350" r="2.5" fill="#3a3a3a" />
-                    <circle cx="147" cy="350" r="2.5" fill="#3a3a3a" />
+                    <circle cx="34" cy="57" r="8" fill="#2A2A2A" />
+                    <circle cx="34" cy="57" r="3.3" fill="#6B7280" />
+                    <circle cx="34" cy="53.5" r="0.8" fill="#3a3a3a" />
+                    <circle cx="34" cy="60.5" r="0.8" fill="#3a3a3a" />
+                    <circle cx="30.5" cy="57" r="0.8" fill="#3a3a3a" />
+                    <circle cx="37.5" cy="57" r="0.8" fill="#3a3a3a" />
                 </g>
 
                 <!-- Front Wheel -->
                 <g class="wheel-front">
-                    <circle cx="380" cy="350" r="40" fill="#2A2A2A" />
-                    <circle cx="380" cy="350" r="25" fill="#666666" />
-                    <circle cx="380" cy="350" r="15" fill="#2A2A2A" />
-                    <circle cx="380" cy="333" r="2.5" fill="#3a3a3a" />
-                    <circle cx="380" cy="367" r="2.5" fill="#3a3a3a" />
-                    <circle cx="363" cy="350" r="2.5" fill="#3a3a3a" />
-                    <circle cx="397" cy="350" r="2.5" fill="#3a3a3a" />
+                    <circle cx="90" cy="57" r="8" fill="#2A2A2A" />
+                    <circle cx="90" cy="57" r="3.3" fill="#6B7280" />
+                    <circle cx="90" cy="53.5" r="0.8" fill="#3a3a3a" />
+                    <circle cx="90" cy="60.5" r="0.8" fill="#3a3a3a" />
+                    <circle cx="86.5" cy="57" r="0.8" fill="#3a3a3a" />
+                    <circle cx="93.5" cy="57" r="0.8" fill="#3a3a3a" />
                 </g>
             </svg>
         </a>

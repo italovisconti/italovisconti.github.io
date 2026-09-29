@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="80" viewBox="0 0 128 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="simpleBusStripeClip">
+      <rect x="10" y="18" width="108" height="7" rx="3.5" ry="3.5" />
+    </clipPath>
+  </defs>
+
+  <rect x="10" y="14" width="108" height="38" rx="9" ry="9" fill="#2D4A3E" />
+  <g clip-path="url(#simpleBusStripeClip)">
+    <rect x="10" y="18" width="27" height="7" fill="#C41230" />
+    <rect x="37" y="18" width="27" height="7" fill="#F1C40F" />
+    <rect x="64" y="18" width="27" height="7" fill="#27AE60" />
+    <rect x="91" y="18" width="27" height="7" fill="#2E86DE" />
+  </g>
+
+  <rect x="18" y="28" width="17" height="10" rx="2" ry="2" fill="#FFFFFF" opacity="0.82" />
+  <rect x="39" y="28" width="17" height="10" rx="2" ry="2" fill="#FFFFFF" opacity="0.82" />
+  <rect x="60" y="28" width="17" height="10" rx="2" ry="2" fill="#FFFFFF" opacity="0.82" />
+  <rect x="81" y="28" width="17" height="10" rx="2" ry="2" fill="#FFFFFF" opacity="0.82" />
+  <rect x="101" y="28" width="8" height="21" rx="2" ry="2" fill="#FFFFFF" opacity="0.88" />
+
+  <circle cx="34" cy="57" r="8" fill="#2A2A2A" />
+  <circle cx="34" cy="57" r="3.3" fill="#6B7280" />
+  <circle cx="90" cy="57" r="8" fill="#2A2A2A" />
+  <circle cx="90" cy="57" r="3.3" fill="#6B7280" />
+</svg>
